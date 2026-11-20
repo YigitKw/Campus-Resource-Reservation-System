@@ -1,0 +1,80 @@
+{"no": 1, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 2, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 3, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 4, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 5, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 6, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 7, "komut": "kullanici_ekle", "durum": "RED", "kod": "ID_MEVCUT"}
+{"no": 8, "komut": "kullanici_ekle", "durum": "RED", "kod": "TANIMSIZ_DEGER"}
+{"no": 9, "komut": "kullanici_ekle", "durum": "RED", "kod": "GECERSIZ_DEGER"}
+{"no": 10, "komut": "kullanici_ekle", "durum": "RED", "kod": "GECERSIZ_DEGER"}
+{"no": 11, "komut": "kullanici_ekle", "durum": "RED", "kod": "GECERSIZ_DEGER"}
+{"no": 12, "komut": "kullanici_ekle", "durum": "RED", "kod": "GECERSIZ_DEGER"}
+{"no": 13, "komut": "kullanici_ekle", "durum": "RED", "kod": "GECERSIZ_DEGER"}
+{"no": 14, "komut": "kaynak_ekle", "durum": "RED", "kod": "ID_MEVCUT"}
+{"no": 15, "komut": "kaynak_ekle", "durum": "RED", "kod": "TANIMSIZ_DEGER"}
+{"no": 16, "komut": "kaynak_ekle", "durum": "RED", "kod": "TANIMSIZ_DEGER"}
+{"no": 17, "komut": "kaynak_ekle", "durum": "TAMAM"}
+{"no": 18, "komut": "rezervasyon", "durum": "RED", "kod": "BULUNAMADI"}
+{"no": 19, "komut": "rezervasyon", "durum": "RED", "kod": "ZAMAN_ADIMI_HATASI"}
+{"no": 20, "komut": "rezervasyon", "durum": "RED", "kod": "GECMIS_ZAMAN"}
+{"no": 21, "komut": "rezervasyon", "durum": "RED", "kod": "CALISMA_SAATI_DISI"}
+{"no": 22, "komut": "rezervasyon", "durum": "RED", "kod": "SURE_SINIRI"}
+{"no": 23, "komut": "rezervasyon", "durum": "RED", "kod": "ILERI_TARIH_SINIRI"}
+{"no": 24, "komut": "rezervasyon", "durum": "RED", "kod": "ROL_IZNI_YOK"}
+{"no": 25, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r1", "ucret": 16, "bakiye": 284}
+{"no": 26, "komut": "rezervasyon", "durum": "RED", "kod": "SERTIFIKA_YOK"}
+{"no": 27, "komut": "rezervasyon", "durum": "RED", "kod": "BAKIM"}
+{"no": 28, "komut": "rezervasyon", "durum": "RED", "kod": "KESISME"}
+{"no": 29, "komut": "rezervasyon", "durum": "RED", "kod": "HAZIRLIK_IHLALI"}
+{"no": 30, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r2", "ucret": 4, "bakiye": 116}
+{"no": 31, "komut": "rezervasyon", "durum": "RED", "kod": "ARDISIK_KULLANIM"}
+{"no": 32, "komut": "bekleme", "durum": "RED", "kod": "BEKLEME_GEREKSIZ"}
+{"no": 33, "komut": "saat", "durum": "RED", "kod": "SAAT_GERI"}
+{"no": 34, "komut": "paket", "durum": "RED", "kod": "PAKET_BOYUTU", "kalemler": []}
+{"no": 35, "komut": "paket", "durum": "RED", "kod": "PAKET_BOYUTU", "kalemler": []}
+{"no": 36, "komut": "paket", "durum": "RED", "kod": "GUVENILIRLIK_DUSUK", "kalemler": []}
+{"no": 37, "komut": "paket", "durum": "RED", "kod": "PAKET_RED", "kalemler": [{"sira": 0, "durum": "TAMAM"}, {"sira": 1, "durum": "RED", "kod": "SERTIFIKA_YOK"}]}
+{"no": 38, "komut": "paket", "durum": "RED", "kod": "PAKET_ICI_KESISME", "kalemler": [{"sira": 0, "durum": "TAMAM"}, {"sira": 1, "durum": "TAMAM"}]}
+{"no": 39, "komut": "paket", "durum": "RED", "kod": "BAKIYE_YETERSIZ", "kalemler": [{"sira": 0, "durum": "TAMAM"}, {"sira": 1, "durum": "TAMAM"}]}
+{"no": 40, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r3", "ucret": 8, "bakiye": 108}
+{"no": 41, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 42, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 43, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 44, "komut": "bekleme", "durum": "TAMAM", "bekleme_id": "b1", "sira": 1}
+{"no": 45, "komut": "bekleme", "durum": "TAMAM", "bekleme_id": "b2", "sira": 1}
+{"no": 46, "komut": "bekleme", "durum": "TAMAM", "bekleme_id": "b3", "sira": 3}
+{"no": 47, "komut": "saat", "durum": "TAMAM", "olaylar": []}
+{"no": 48, "komut": "giris", "durum": "RED", "kod": "GIRIS_PENCERESI_DISI"}
+{"no": 49, "komut": "saat", "durum": "TAMAM", "olaylar": []}
+{"no": 50, "komut": "giris", "durum": "TAMAM", "yeni_durum": "KULLANIMDA"}
+{"no": 51, "komut": "saat", "durum": "TAMAM", "olaylar": [{"zaman": "2027-03-08T10:15", "tur": "GELMEDI", "rezervasyon": "r1", "kullanici": "t_lab_user", "guvenilirlik": 65}]}
+{"no": 52, "komut": "cikis", "durum": "TAMAM", "yeni_durum": "TAMAMLANDI", "guvenilirlik": 80, "olaylar": []}
+{"no": 53, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r4", "ucret": 18, "bakiye": 102}
+{"no": 54, "komut": "saat", "durum": "TAMAM", "olaylar": []}
+{"no": 55, "komut": "giris", "durum": "TAMAM", "yeni_durum": "KULLANIMDA"}
+{"no": 56, "komut": "sorgu", "durum": "TAMAM", "doluluk": [{"baslangic": "2027-03-08T08:00", "bitis": "2027-03-08T10:00", "tur": "BAKIM"}, {"baslangic": "2027-03-08T11:30", "bitis": "2027-03-08T12:30", "tur": "REZERVASYON", "rezervasyon": "r4"}]}
+{"no": 57, "komut": "saat", "durum": "TAMAM", "olaylar": [{"zaman": "2027-03-08T12:30", "tur": "TAMAMLANDI", "rezervasyon": "r4", "kullanici": "t_tamam_user", "guvenilirlik": 82}]}
+{"no": 58, "komut": "sorgu", "durum": "TAMAM", "bakiye": 102, "guvenilirlik": 82, "rezervasyonlar": [{"id": "r4", "kaynak": "YAZ-2", "baslangic": "2027-03-08T11:30", "bitis": "2027-03-08T12:30", "durum": "TAMAMLANDI", "ucret": 18}]}
+{"no": 59, "komut": "saat", "durum": "TAMAM", "olaylar": [{"zaman": "2027-03-10T14:15", "tur": "GELMEDI", "rezervasyon": "r3", "kullanici": "t_u1", "guvenilirlik": 65}, {"zaman": "2027-03-10T14:15", "tur": "OTOMATIK_ATAMA", "bekleme": "b2", "rezervasyon": "r5", "kullanici": "w_u90_a", "ucret": 4, "bakiye": 116}]}
+{"no": 60, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r6", "ucret": 8, "bakiye": 112}
+{"no": 61, "komut": "saat", "durum": "TAMAM", "olaylar": [{"zaman": "2027-03-10T14:45", "tur": "GELMEDI", "rezervasyon": "r5", "kullanici": "w_u90_a", "guvenilirlik": 75}, {"zaman": "2027-03-15T00:00", "tur": "HAFTALIK_SIFIRLAMA"}]}
+{"no": 62, "komut": "sorgu", "durum": "TAMAM", "bakiye": 120, "guvenilirlik": 100, "rezervasyonlar": [{"id": "r6", "kaynak": "ODA-1", "baslangic": "2027-03-17T14:00", "bitis": "2027-03-17T16:00", "durum": "ONAYLI", "ucret": 8}]}
+{"no": 63, "komut": "iptal", "durum": "TAMAM", "iade": 0, "bakiye": 120, "guvenilirlik": 100, "olaylar": []}
+{"no": 64, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r7", "ucret": 8, "bakiye": 112}
+{"no": 65, "komut": "iptal", "durum": "TAMAM", "iade": 8, "bakiye": 120, "guvenilirlik": 100, "olaylar": []}
+{"no": 66, "komut": "sorgu", "durum": "TAMAM", "bakiye": 120, "guvenilirlik": 100, "rezervasyonlar": [{"id": "r6", "kaynak": "ODA-1", "baslangic": "2027-03-17T14:00", "bitis": "2027-03-17T16:00", "durum": "IPTAL", "ucret": 8}, {"id": "r7", "kaynak": "ODA-1", "baslangic": "2027-03-18T14:00", "bitis": "2027-03-18T16:00", "durum": "IPTAL", "ucret": 8}]}
+{"no": 67, "komut": "kullanici_ekle", "durum": "TAMAM"}
+{"no": 68, "komut": "rezervasyon", "durum": "RED", "kod": "BAKIYE_YETERSIZ"}
+{"no": 69, "komut": "rezervasyon", "durum": "RED", "kod": "ILERI_TARIH_SINIRI"}
+{"no": 70, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r8", "ucret": 4, "bakiye": 116}
+{"no": 71, "komut": "bekleme", "durum": "TAMAM", "bekleme_id": "b4", "sira": 1}
+{"no": 72, "komut": "iptal", "durum": "TAMAM", "iade": 0, "bakiye": 116, "guvenilirlik": 95, "olaylar": [{"zaman": "2027-03-15T08:00", "tur": "OTOMATIK_ATAMA", "bekleme": "b4", "rezervasyon": "r9", "kullanici": "t_u1", "ucret": 4, "bakiye": 116}]}
+{"no": 73, "komut": "kullanici_ekle", "durum": "RED", "kod": "ID_MEVCUT"}
+{"no": 74, "komut": "kullanici_ekle", "durum": "RED", "kod": "TANIMSIZ_DEGER"}
+{"no": 75, "komut": "rezervasyon", "durum": "RED", "kod": "ZAMAN_ADIMI_HATASI"}
+{"no": 76, "komut": "rezervasyon", "durum": "TAMAM", "rezervasyon_id": "r10", "ucret": 8, "bakiye": 108}
+{"no": 77, "komut": "bekleme", "durum": "TAMAM", "bekleme_id": "b5", "sira": 1}
+{"no": 78, "komut": "bekleme", "durum": "TAMAM", "bekleme_id": "b6", "sira": 2}
+{"no": 79, "komut": "bekleme", "durum": "TAMAM", "bekleme_id": "b7", "sira": 3}
+{"no": 80, "komut": "iptal", "durum": "TAMAM", "iade": 4, "bakiye": 112, "guvenilirlik": 95, "olaylar": [{"zaman": "2027-03-15T08:00", "tur": "OTOMATIK_ATAMA", "bekleme": "b5", "rezervasyon": "r11", "kullanici": "w_u90_a", "ucret": 4, "bakiye": 116}, {"zaman": "2027-03-15T08:00", "tur": "OTOMATIK_ATAMA", "bekleme": "b7", "rezervasyon": "r12", "kullanici": "w_u70_b", "ucret": 5, "bakiye": 115}]}
