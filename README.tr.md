@@ -18,7 +18,7 @@ Bu projede, kural tabanlı bir kaynak rezervasyon motoru ve bu motoru doğrudan 
 
 ## 2. Sistem Mimarisi
 
-Yazılım, sorumlulukların ayrılığı ilkesi doğrultusunda birbirine gevşek bağlı dört katmanlı bir yapıda düzenlenmiştir (Şekil 1, [240201025.pdf](240201025.pdf) temel alınarak).
+Yazılım, sorumlulukların ayrılığı ilkesi doğrultusunda birbirine gevşek bağlı dört katmanlı bir yapıda düzenlenmiştir (Şekil 1).
 
 ```mermaid
 flowchart TD
@@ -188,22 +188,22 @@ Arayüzün sunduğu başlıca işlevler:
 Linux / macOS / Git Bash:
 ```bash
 chmod +x calistir.sh
-./calistir.sh baslangic.json komutlar.jsonl > sonuclar.jsonl
+./calistir.sh baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
 ```
 
 Windows (CMD):
 ```bat
-calistir.bat baslangic.json komutlar.jsonl > sonuclar.jsonl
+calistir.bat baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
 ```
 
 Windows PowerShell (çıktının `UTF-16LE` yerine `UTF-8` yazılması için `cmd /c` ile çalıştırın):
 ```powershell
-cmd /c "calistir.bat baslangic.json komutlar.jsonl > sonuclar.jsonl"
+cmd /c "calistir.bat baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl"
 ```
 
 Doğrudan Python ile:
 ```bash
-python main.py baslangic.json komutlar.jsonl > sonuclar.jsonl
+python main.py baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
 ```
 
 ### Masaüstü Uygulaması (GUI) Kullanımı
@@ -230,22 +230,26 @@ Uygulama açılışta çalışma dizinindeki `baslangic.json` dosyasını yükle
 
 ## 6. Doğrulama ve Test Sonuçları
 
-Çıktılar, üretilen JSONL satırlarını alan adı, veri tipi (`int`/`float` ayrımı dahil) ve değer düzeyinde özyinelemeli olarak karşılaştıran [dogrula.py](dogrula.py) betiği ile doğrulanır:
+Çıktılar, üretilen JSONL satırlarını alan adı, veri tipi (`int`/`float` ayrımı dahil) ve değer düzeyinde özyinelemeli olarak karşılaştıran [tests/dogrula.py](tests/dogrula.py) betiği ile doğrulanır:
 
 ```bash
-python main.py baslangic.json komutlar.jsonl > sonuclar.jsonl
-python dogrula.py sonuclar.jsonl beklenen_sonuclar.jsonl
+python main.py baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
+python tests/dogrula.py scenarios/beklenen_sonuclar.jsonl sonuclar.jsonl
 
-python main.py baslangic.json test_kapsamli_komutlar.jsonl > test_kapsamli_sonuclar.jsonl
-python dogrula.py test_kapsamli_sonuclar.jsonl test_kapsamli_beklenen.jsonl
+python main.py baslangic.json scenarios/test_kapsamli_komutlar.jsonl > test_kapsamli_sonuclar.jsonl
+python tests/dogrula.py scenarios/test_kapsamli_beklenen.jsonl test_kapsamli_sonuclar.jsonl
+```
+
+80 komutluk sınır değer test kümesini yeniden üretmek ve yerleşik doğrulamalarını çalıştırmak için:
+
+```bash
+python tests/olustur_kapsamli_testler.py
 ```
 
 | Test Kümesi | Komut | Kapsam | Hata | Eşleşme |
 | :--- | :---: | :--- | :---: | :---: |
-| Şartname Referans Senaryosu (`komutlar.jsonl`) | 19 | K1-K11 temel akış | 0 | %100 |
-| Genişletilmiş Sınır Değer Seti (`test_kapsamli_komutlar.jsonl`) | 80 | 13 K10 hata kodu, K1-K11 sınırları, atomik paketler, olay sırası | 0 | %100 |
-
-Not: Teslim edilen [240201025.pdf](240201025.pdf) raporu, [olustur_kapsamli_testler.py](olustur_kapsamli_testler.py) dosyasına sonradan eklenen 8 sınır değer senaryosundan önceki 72 komutluk aşamayı belgelemektedir; güncel depodaki test kümesi 80 komuttan oluşur.
+| Şartname Referans Senaryosu (`scenarios/komutlar.jsonl`) | 19 | K1-K11 temel akış | 0 | %100 |
+| Genişletilmiş Sınır Değer Seti (`scenarios/test_kapsamli_komutlar.jsonl`) | 80 | 13 K10 hata kodu, K1-K11 sınırları, atomik paketler, olay sırası | 0 | %100 |
 
 ### Örnek Senaryo Yürütme Özeti (19 Komut)
 
@@ -288,12 +292,11 @@ Not: Teslim edilen [240201025.pdf](240201025.pdf) raporu, [olustur_kapsamli_test
 | [calistir.sh](calistir.sh) / [calistir.bat](calistir.bat) | Platformlar arası CLI çalıştırma betikleri |
 | [calistir_arayuz.sh](calistir_arayuz.sh) / [calistir_arayuz.bat](calistir_arayuz.bat) | Platformlar arası GUI çalıştırma betikleri |
 | [baslangic.json](baslangic.json) | Başlangıç durum dosyası |
-| [komutlar.jsonl](komutlar.jsonl) | 19 komutluk referans girdi dosyası |
-| [beklenen_sonuclar.jsonl](beklenen_sonuclar.jsonl) | Referans senaryo için beklenen çıktı dosyası |
-| [test_kapsamli_komutlar.jsonl](test_kapsamli_komutlar.jsonl) | 80 komutluk sınır değer test dosyası |
-| [test_kapsamli_beklenen.jsonl](test_kapsamli_beklenen.jsonl) | 80 komutluk test kümesi beklenen çıktıları |
-| [olustur_kapsamli_testler.py](olustur_kapsamli_testler.py) | 80 komutluk test kümesini üreten ve doğrulayan betik |
-| [dogrula.py](dogrula.py) | Alan ve tip düzeyinde özyinelemeli JSONL doğrulama aracı |
+| [scenarios/komutlar.jsonl](scenarios/komutlar.jsonl) | 19 komutluk referans girdi dosyası |
+| [scenarios/beklenen_sonuclar.jsonl](scenarios/beklenen_sonuclar.jsonl) | Referans senaryo için beklenen çıktı dosyası |
+| [scenarios/test_kapsamli_komutlar.jsonl](scenarios/test_kapsamli_komutlar.jsonl) | 80 komutluk sınır değer test dosyası |
+| [scenarios/test_kapsamli_beklenen.jsonl](scenarios/test_kapsamli_beklenen.jsonl) | 80 komutluk test kümesi beklenen çıktıları |
+| [tests/olustur_kapsamli_testler.py](tests/olustur_kapsamli_testler.py) | 80 komutluk test kümesini üreten ve doğrulayan betik |
+| [tests/dogrula.py](tests/dogrula.py) | Alan ve tip düzeyinde özyinelemeli JSONL doğrulama aracı |
 | [docs/gui_light.png](docs/gui_light.png) / [docs/gui_dark.png](docs/gui_dark.png) | Açık ve koyu tema arayüz ekran görüntüleri |
-| [240201025.pdf](240201025.pdf) / [rapor.tex](rapor.tex) | Teslim edilen IEEE teknik raporu ve LaTeX kaynağı |
 | [README.md](README.md) / [README.tr.md](README.tr.md) | İngilizce ve Türkçe proje belgeleri |

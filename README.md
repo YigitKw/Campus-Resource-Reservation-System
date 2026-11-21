@@ -18,7 +18,7 @@ This project implements a rule-based campus resource reservation engine paired w
 
 ## 2. System Architecture
 
-The software separates user interfaces, scheduling logic, dynamic pricing, and data models into four loosely coupled modules (Figure 1, adapted from [240201025.pdf](240201025.pdf)).
+The software separates user interfaces, scheduling logic, dynamic pricing, and data models into four loosely coupled modules (Figure 1).
 
 ```mermaid
 flowchart TD
@@ -188,22 +188,22 @@ Interface features implemented in the Tkinter application:
 Linux / macOS / Git Bash:
 ```bash
 chmod +x calistir.sh
-./calistir.sh baslangic.json komutlar.jsonl > sonuclar.jsonl
+./calistir.sh baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
 ```
 
 Windows (CMD):
 ```bat
-calistir.bat baslangic.json komutlar.jsonl > sonuclar.jsonl
+calistir.bat baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
 ```
 
 Windows PowerShell (use `cmd /c` so output redirection stays UTF-8 rather than UTF-16LE):
 ```powershell
-cmd /c "calistir.bat baslangic.json komutlar.jsonl > sonuclar.jsonl"
+cmd /c "calistir.bat baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl"
 ```
 
 Direct Python execution:
 ```bash
-python main.py baslangic.json komutlar.jsonl > sonuclar.jsonl
+python main.py baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
 ```
 
 ### Desktop GUI Execution
@@ -230,22 +230,26 @@ On startup, the GUI loads `baslangic.json` from the working directory. The `Dosy
 
 ## 6. Verification and Test Results
 
-Outputs are verified using [dogrula.py](dogrula.py), which performs line-by-line recursive comparison of JSON field names, data types (distinguishing `int` from `float`), and values:
+Outputs are verified using [tests/dogrula.py](tests/dogrula.py), which performs line-by-line recursive comparison of JSON field names, data types (distinguishing `int` from `float`), and values:
 
 ```bash
-python main.py baslangic.json komutlar.jsonl > sonuclar.jsonl
-python dogrula.py sonuclar.jsonl beklenen_sonuclar.jsonl
+python main.py baslangic.json scenarios/komutlar.jsonl > sonuclar.jsonl
+python tests/dogrula.py scenarios/beklenen_sonuclar.jsonl sonuclar.jsonl
 
-python main.py baslangic.json test_kapsamli_komutlar.jsonl > test_kapsamli_sonuclar.jsonl
-python dogrula.py test_kapsamli_sonuclar.jsonl test_kapsamli_beklenen.jsonl
+python main.py baslangic.json scenarios/test_kapsamli_komutlar.jsonl > test_kapsamli_sonuclar.jsonl
+python tests/dogrula.py scenarios/test_kapsamli_beklenen.jsonl test_kapsamli_sonuclar.jsonl
+```
+
+To regenerate the 80-command boundary suite and run its built-in assertions:
+
+```bash
+python tests/olustur_kapsamli_testler.py
 ```
 
 | Test Suite | Commands | Scope | Errors | Exact Match |
 | :--- | :---: | :--- | :---: | :---: |
-| Specification Reference (`komutlar.jsonl`) | 19 | K1-K11 reference scenario | 0 | 100% |
-| Extended Boundary Suite (`test_kapsamli_komutlar.jsonl`) | 80 | All 13 K10 error codes, K1-K11 boundaries, atomic packages, event ordering | 0 | 100% |
-
-Note: [240201025.pdf](240201025.pdf) reports the earlier 72-command test stage prior to 8 boundary-value cases later added to [olustur_kapsamli_testler.py](olustur_kapsamli_testler.py) (bringing the suite to 80 commands).
+| Specification Reference (`scenarios/komutlar.jsonl`) | 19 | K1-K11 reference scenario | 0 | 100% |
+| Extended Boundary Suite (`scenarios/test_kapsamli_komutlar.jsonl`) | 80 | All 13 K10 error codes, K1-K11 boundaries, atomic packages, event ordering | 0 | 100% |
 
 ### Reference Scenario Execution Summary (19 Commands)
 
@@ -288,12 +292,11 @@ Note: [240201025.pdf](240201025.pdf) reports the earlier 72-command test stage p
 | [calistir.sh](calistir.sh) / [calistir.bat](calistir.bat) | Cross-platform CLI runners |
 | [calistir_arayuz.sh](calistir_arayuz.sh) / [calistir_arayuz.bat](calistir_arayuz.bat) | Cross-platform GUI launchers |
 | [baslangic.json](baslangic.json) | Initial campus state fixture |
-| [komutlar.jsonl](komutlar.jsonl) | 19-command reference input stream |
-| [beklenen_sonuclar.jsonl](beklenen_sonuclar.jsonl) | Expected reference output stream |
-| [test_kapsamli_komutlar.jsonl](test_kapsamli_komutlar.jsonl) | 80-command boundary-value test stream |
-| [test_kapsamli_beklenen.jsonl](test_kapsamli_beklenen.jsonl) | Expected outputs for the 80-command suite |
-| [olustur_kapsamli_testler.py](olustur_kapsamli_testler.py) | Generator and self-check script for the 80-command suite |
-| [dogrula.py](dogrula.py) | Recursive JSONL field-and-type verification script |
+| [scenarios/komutlar.jsonl](scenarios/komutlar.jsonl) | 19-command reference input stream |
+| [scenarios/beklenen_sonuclar.jsonl](scenarios/beklenen_sonuclar.jsonl) | Expected reference output stream |
+| [scenarios/test_kapsamli_komutlar.jsonl](scenarios/test_kapsamli_komutlar.jsonl) | 80-command boundary-value test stream |
+| [scenarios/test_kapsamli_beklenen.jsonl](scenarios/test_kapsamli_beklenen.jsonl) | Expected outputs for the 80-command suite |
+| [tests/olustur_kapsamli_testler.py](tests/olustur_kapsamli_testler.py) | Generator and self-check script for the 80-command suite |
+| [tests/dogrula.py](tests/dogrula.py) | Recursive JSONL field-and-type verification script |
 | [docs/gui_light.png](docs/gui_light.png) / [docs/gui_dark.png](docs/gui_dark.png) | GUI screenshots in light and dark themes |
-| [240201025.pdf](240201025.pdf) / [rapor.tex](rapor.tex) | Submitted IEEE technical report and LaTeX source |
 | [README.md](README.md) / [README.tr.md](README.tr.md) | English and Turkish documentation |

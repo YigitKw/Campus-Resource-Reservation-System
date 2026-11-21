@@ -1,4 +1,10 @@
 import json
+from pathlib import Path
+import sys
+
+KOK_DIZIN = Path(__file__).resolve().parent.parent
+if str(KOK_DIZIN) not in sys.path:
+    sys.path.insert(0, str(KOK_DIZIN))
 
 from motor import RezervasyonMotoru
 
@@ -620,7 +626,7 @@ def main():
     komutlar = uret_testler()
 
     motor = RezervasyonMotoru()
-    motor.yukle("baslangic.json")
+    motor.yukle(str(KOK_DIZIN / "baslangic.json"))
 
     sonuclar = []
     for no, cmd in enumerate(komutlar, start=1):
@@ -634,15 +640,21 @@ def main():
 
     dogrula_beklenenler(sonuclar)
 
-    with open("test_kapsamli_komutlar.jsonl", "w", encoding="utf-8") as f:
+    senaryo_dizin = KOK_DIZIN / "scenarios"
+    senaryo_dizin.mkdir(parents=True, exist_ok=True)
+
+    with open(senaryo_dizin / "test_kapsamli_komutlar.jsonl", "w", encoding="utf-8") as f:
         for cmd in komutlar:
             f.write(json.dumps(cmd, ensure_ascii=False) + "\n")
 
-    with open("test_kapsamli_beklenen.jsonl", "w", encoding="utf-8") as f:
+    with open(senaryo_dizin / "test_kapsamli_beklenen.jsonl", "w", encoding="utf-8") as f:
         for res in sonuclar:
             f.write(json.dumps(res, ensure_ascii=False) + "\n")
 
-    print(f"[OK] {len(komutlar)} komutluk test_kapsamli_komutlar.jsonl ve test_kapsamli_beklenen.jsonl olusturuldu.")
+    print(
+        f"[OK] {len(komutlar)} komutluk scenarios/test_kapsamli_komutlar.jsonl "
+        "ve scenarios/test_kapsamli_beklenen.jsonl olusturuldu."
+    )
 
 
 if __name__ == "__main__":

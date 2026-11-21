@@ -1,5 +1,8 @@
 import json
+from pathlib import Path
 import sys
+
+KOK_DIZIN = Path(__file__).resolve().parent.parent
 
 
 def derin_karsilastir(yol: str, beklenen, uretilen) -> list[str]:
@@ -55,8 +58,12 @@ def jsonl_oku(dosya_adi: str) -> list[str]:
 
 
 def main() -> int:
-    beklenen_yol = sys.argv[1] if len(sys.argv) > 1 else "beklenen_sonuclar.jsonl"
-    uretilen_yol = sys.argv[2] if len(sys.argv) > 2 else "sonuclar.jsonl"
+    beklenen_yol = (
+        sys.argv[1]
+        if len(sys.argv) > 1
+        else str(KOK_DIZIN / "scenarios" / "beklenen_sonuclar.jsonl")
+    )
+    uretilen_yol = sys.argv[2] if len(sys.argv) > 2 else str(KOK_DIZIN / "sonuclar.jsonl")
 
     try:
         beklenen_satirlar = jsonl_oku(beklenen_yol)
