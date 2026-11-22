@@ -2,12 +2,6 @@
 
 # Kampüs Kaynak Rezervasyon Sistemi
 
-**Kocaeli Üniversitesi - Bilgisayar Mühendisliği Bölümü**  
-**Yazılım Laboratuvarı I (2026-2027 Güz), Proje I**  
-**Hazırlayan:** Yiğit Karabacak (`240201025`)
-
----
-
 ## 1. Genel Bakış
 
 Üniversite yerleşkelerinde ortak kullanıma açık kaynakların (toplantı odaları, laboratuvarlar, 3D yazıcılar ve GPU sunucuları) paylaşımı, basit takvim çakışma kontrolünün ötesinde kurallar gerektirir. İki kullanım arasındaki soğuma veya hazırlık süreleri, planlı bakım pencereleri, kullanıcı rol yetkileri, haftalık puan kotaları, yoğunluğa göre değişen ücretler ve kullanıcı güvenilirlik puanları tahsis kararlarını doğrudan etkiler.

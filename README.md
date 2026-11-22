@@ -2,12 +2,6 @@ English | [Türkçe](README.tr.md)
 
 # Campus Resource Reservation System
 
-**Kocaeli University - Department of Computer Engineering**  
-**Software Laboratory I (2026-2027 Fall), Project I**  
-**Author:** Yiğit Karabacak (`240201025`)
-
----
-
 ## 1. Overview
 
 Shared academic and technical resources on a university campus (meeting rooms, laboratories, 3D printers, and GPU servers) require scheduling rules beyond simple time-slot overlap checks. Equipment cooling or preparation intervals between uses, scheduled maintenance windows, user role permissions, weekly point quotas, dynamic congestion pricing, and attendance reliability all affect allocation decisions.
