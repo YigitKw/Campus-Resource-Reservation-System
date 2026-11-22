@@ -300,3 +300,10 @@ python tests/olustur_kapsamli_testler.py
 | [tests/dogrula.py](tests/dogrula.py) | Recursive JSONL field-and-type verification script |
 | [docs/gui_light.png](docs/gui_light.png) / [docs/gui_dark.png](docs/gui_dark.png) | GUI screenshots in light and dark themes |
 | [README.md](README.md) / [README.tr.md](README.tr.md) | English and Turkish documentation |
+| [LICENSE](LICENSE) | MIT License text |
+
+---
+
+## 8. License
+
+This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.

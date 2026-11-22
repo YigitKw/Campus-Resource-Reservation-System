@@ -300,3 +300,10 @@ python tests/olustur_kapsamli_testler.py
 | [tests/dogrula.py](tests/dogrula.py) | Alan ve tip düzeyinde özyinelemeli JSONL doğrulama aracı |
 | [docs/gui_light.png](docs/gui_light.png) / [docs/gui_dark.png](docs/gui_dark.png) | Açık ve koyu tema arayüz ekran görüntüleri |
 | [README.md](README.md) / [README.tr.md](README.tr.md) | İngilizce ve Türkçe proje belgeleri |
+| [LICENSE](LICENSE) | MIT Lisans metni |
+
+---
+
+## 8. Lisans
+
+Bu proje MIT Lisansı ile lisanslanmıştır. Ayrıntılar için [LICENSE](LICENSE) dosyasına bakabilirsiniz.
